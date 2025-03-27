@@ -1,0 +1,11 @@
+framework module aipayiOSLibrary {
+  umbrella header "aipayiOSLibrary.h"
+  export *
+
+  module * { export * }
+}
+
+module aipayiOSLibrary.Swift {
+  header "aipayiOSLibrary-Swift.h"
+  requires objc
+}
