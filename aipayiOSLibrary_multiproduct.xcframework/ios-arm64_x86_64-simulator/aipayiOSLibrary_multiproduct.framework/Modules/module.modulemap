@@ -1,0 +1,4 @@
+framework module aipayiOSLibrary_multiproduct {
+  header "aipayiOSLibrary_multiproduct-Swift.h"
+  requires objc
+}
