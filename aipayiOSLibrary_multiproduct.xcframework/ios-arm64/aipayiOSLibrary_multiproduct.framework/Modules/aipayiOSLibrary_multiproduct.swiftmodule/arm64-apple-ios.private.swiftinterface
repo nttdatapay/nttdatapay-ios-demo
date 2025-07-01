@@ -1,0 +1,270 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name aipayiOSLibrary_multiproduct
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import CommonCrypto
+import Foundation
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol Updateable {
+  var status: aipayiOSLibrary_multiproduct.Status { get }
+  @discardableResult
+  func update(buffer: Swift.UnsafeRawPointer, byteCount: _Builtin_stddef.size_t) -> Self?
+}
+extension aipayiOSLibrary_multiproduct.Updateable {
+  public func update(data: Foundation.Data) -> Self?
+  public func update(byteArray: [Swift.UInt8]) -> Self?
+  public func update(string: Swift.String) -> Self?
+  public func update(_ data: Foundation.Data) -> Self?
+  public func update(_ byteArray: [Swift.UInt8]) -> Self?
+  public func update(_ string: Swift.String) -> Self?
+}
+open class Digest : aipayiOSLibrary_multiproduct.Updateable {
+  open var status: aipayiOSLibrary_multiproduct.Status
+  public enum Algorithm {
+    case sha1, sha224, sha256, sha384, sha512
+    public static func == (a: aipayiOSLibrary_multiproduct.Digest.Algorithm, b: aipayiOSLibrary_multiproduct.Digest.Algorithm) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(algorithm: aipayiOSLibrary_multiproduct.Digest.Algorithm)
+  open func update(buffer: Swift.UnsafeRawPointer, byteCount: _Builtin_stddef.size_t) -> Self?
+  open func final() -> [Swift.UInt8]
+  @objc deinit
+}
+public enum Status : CommonCrypto.CCCryptorStatus, Swift.CustomStringConvertible, Swift.Error {
+  case success, paramError, bufferTooSmall, memoryFailure, alignmentError, decodeError, unimplemented, overflow, rngFailure
+  public var description: Swift.String {
+    get
+  }
+  public static func fromRaw(status: CommonCrypto.CCCryptorStatus) -> aipayiOSLibrary_multiproduct.Status?
+  public init?(rawValue: CommonCrypto.CCCryptorStatus)
+  public typealias RawValue = CommonCrypto.CCCryptorStatus
+  public var rawValue: CommonCrypto.CCCryptorStatus {
+    get
+  }
+}
+open class StreamCryptor {
+  public enum Operation {
+    case encrypt, decrypt
+    public static func == (a: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, b: aipayiOSLibrary_multiproduct.StreamCryptor.Operation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum ValidKeySize {
+    case fixed(Swift.Int)
+    case discrete([Swift.Int])
+    case range(Swift.Int, Swift.Int)
+  }
+  public enum Mode {
+    case ECB
+    case CBC
+    case CFB
+    case CTR
+    case OFB
+    case RC4
+    case CFB8
+    public static func == (a: aipayiOSLibrary_multiproduct.StreamCryptor.Mode, b: aipayiOSLibrary_multiproduct.StreamCryptor.Mode) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Padding {
+    case NoPadding
+    case PKCS7Padding
+    public static func == (a: aipayiOSLibrary_multiproduct.StreamCryptor.Padding, b: aipayiOSLibrary_multiproduct.StreamCryptor.Padding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Algorithm {
+    case aes, des, tripleDES, cast, rc2, blowfish
+    public func blockSize() -> Swift.Int
+    public static func == (a: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, b: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct Options : Swift.OptionSet {
+    public typealias RawValue = Swift.Int
+    public let rawValue: aipayiOSLibrary_multiproduct.StreamCryptor.Options.RawValue
+    public init(rawValue: aipayiOSLibrary_multiproduct.StreamCryptor.Options.RawValue)
+    public init(_ rawValue: aipayiOSLibrary_multiproduct.StreamCryptor.Options.RawValue)
+    public static let None: aipayiOSLibrary_multiproduct.StreamCryptor.Options
+    public static var PKCS7Padding: aipayiOSLibrary_multiproduct.StreamCryptor.Options
+    public static var ECBMode: aipayiOSLibrary_multiproduct.StreamCryptor.Options
+    public typealias ArrayLiteralElement = aipayiOSLibrary_multiproduct.StreamCryptor.Options
+    public typealias Element = aipayiOSLibrary_multiproduct.StreamCryptor.Options
+  }
+  open var status: aipayiOSLibrary_multiproduct.Status
+  convenience public init(operation: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, algorithm: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, options: aipayiOSLibrary_multiproduct.StreamCryptor.Options, key: [Swift.UInt8], iv: [Swift.UInt8])
+  convenience public init(operation: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, algorithm: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, options: aipayiOSLibrary_multiproduct.StreamCryptor.Options, key: Swift.String, iv: Swift.String)
+  convenience public init(operation: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, algorithm: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, mode: aipayiOSLibrary_multiproduct.StreamCryptor.Mode, padding: aipayiOSLibrary_multiproduct.StreamCryptor.Padding, key: [Swift.UInt8], iv: [Swift.UInt8])
+  convenience public init(operation: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, algorithm: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, mode: aipayiOSLibrary_multiproduct.StreamCryptor.Mode, padding: aipayiOSLibrary_multiproduct.StreamCryptor.Padding, key: Swift.String, iv: Swift.String)
+  open func update(dataIn: Foundation.Data, byteArrayOut: inout [Swift.UInt8]) -> (Swift.Int, aipayiOSLibrary_multiproduct.Status)
+  open func update(byteArrayIn: [Swift.UInt8], byteArrayOut: inout [Swift.UInt8]) -> (Swift.Int, aipayiOSLibrary_multiproduct.Status)
+  open func update(stringIn: Swift.String, byteArrayOut: inout [Swift.UInt8]) -> (Swift.Int, aipayiOSLibrary_multiproduct.Status)
+  open func final(byteArrayOut: inout [Swift.UInt8]) -> (Swift.Int, aipayiOSLibrary_multiproduct.Status)
+  public init(operation: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, algorithm: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, options: aipayiOSLibrary_multiproduct.StreamCryptor.Options, keyBuffer: Swift.UnsafeRawPointer, keyByteCount: Swift.Int, ivBuffer: Swift.UnsafeRawPointer, ivByteCount: Swift.Int)
+  public init(operation: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, algorithm: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, mode: aipayiOSLibrary_multiproduct.StreamCryptor.Mode, padding: aipayiOSLibrary_multiproduct.StreamCryptor.Padding, keyBuffer: Swift.UnsafeRawPointer, keyByteCount: Swift.Int, ivBuffer: Swift.UnsafeRawPointer, ivByteCount: Swift.Int)
+  @discardableResult
+  open func update(bufferIn: Swift.UnsafeRawPointer, byteCountIn: Swift.Int, bufferOut: Swift.UnsafeMutableRawPointer, byteCapacityOut: Swift.Int, byteCountOut: inout Swift.Int) -> aipayiOSLibrary_multiproduct.Status
+  @discardableResult
+  open func final(bufferOut: Swift.UnsafeMutableRawPointer, byteCapacityOut: Swift.Int, byteCountOut: inout Swift.Int) -> aipayiOSLibrary_multiproduct.Status
+  open func getOutputLength(inputByteCount: Swift.Int, isFinal: Swift.Bool = false) -> Swift.Int
+  @objc deinit
+}
+public func zeroPad(array: [Swift.UInt8], blockSize: Swift.Int) -> [Swift.UInt8]
+public func hexString(fromArray: [Swift.UInt8], uppercase: Swift.Bool = false) -> Swift.String
+public func zeroPad(string: Swift.String, blockSize: Swift.Int) -> [Swift.UInt8]
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class PaymentsManager : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public func ndpsAipayPayments(paymentRequestData: [Swift.String : Any], controller: UIKit.UIViewController)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class PBKDF {
+  public enum PseudoRandomAlgorithm {
+    case sha1
+    case sha224
+    case sha256
+    case sha384
+    case sha512
+    public static func == (a: aipayiOSLibrary_multiproduct.PBKDF.PseudoRandomAlgorithm, b: aipayiOSLibrary_multiproduct.PBKDF.PseudoRandomAlgorithm) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  open class func calibrate(passwordLength: Swift.Int, saltLength: Swift.Int, algorithm: aipayiOSLibrary_multiproduct.PBKDF.PseudoRandomAlgorithm, derivedKeyLength: Swift.Int, msec: Swift.UInt32) -> Swift.UInt
+  open class func deriveKey(password: Swift.String, salt: Swift.String, prf: aipayiOSLibrary_multiproduct.PBKDF.PseudoRandomAlgorithm, rounds: sys_types.uint, derivedKeyLength: Swift.UInt) -> [Swift.UInt8]
+  open class func deriveKey(password: Swift.String, salt: [Swift.UInt8], prf: aipayiOSLibrary_multiproduct.PBKDF.PseudoRandomAlgorithm, rounds: sys_types.uint, derivedKeyLength: Swift.UInt) -> [Swift.UInt8]
+  open class func deriveKey(password: Swift.UnsafePointer<Swift.Int8>, passwordLen: Swift.Int, salt: Swift.UnsafePointer<Swift.UInt8>, saltLen: Swift.Int, prf: aipayiOSLibrary_multiproduct.PBKDF.PseudoRandomAlgorithm, rounds: sys_types.uint, derivedKey: Swift.UnsafeMutablePointer<Swift.UInt8>, derivedKeyLen: Swift.Int)
+  @objc deinit
+}
+public typealias RNGStatus = aipayiOSLibrary_multiproduct.Status
+@_hasMissingDesignatedInitializers open class Random {
+  open class func generateBytes(bytes: Swift.UnsafeMutableRawPointer, byteCount: Swift.Int) -> aipayiOSLibrary_multiproduct.RNGStatus
+  open class func generateBytes(byteCount: Swift.Int) throws -> [Swift.UInt8]
+  @objc deinit
+}
+public struct PaymentResponse {
+  public let merchTxnID: Swift.String
+  public let amount: Swift.String
+  public let bankTxnID: Swift.String
+  public let date: Swift.String
+  public let statusCode: Swift.String
+  public let message: Swift.String
+  public let transactionDescription: Swift.String
+}
+public struct UserData {
+  public var name: Swift.String
+  public var email: Swift.String
+  public var mobile: Swift.String
+  public init(name: Swift.String, email: Swift.String, mobile: Swift.String)
+}
+public struct PaymentDetails : Swift.Codable {
+  public var userID: Swift.String
+  public var prodName: Swift.String
+  public var txnCurrency: Swift.String
+  public var password: Swift.String
+  public var surchargeAmount: Swift.String
+  public init(userID: Swift.String = "", password: Swift.String = "", prodName: Swift.String = "", txnCurrency: Swift.String = "INR", surchargeAmount: Swift.String = "0.00")
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AccountDetails : Swift.Codable {
+  public var accountNo: Swift.String
+  public var ifscCode: Swift.String
+  public init(accountNo: Swift.String = "", ifscCode: Swift.String = "")
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BillingInfoData {
+  public var address1: Swift.String
+  public var address2: Swift.String
+  public var country: Swift.String
+  public var city: Swift.String
+  public var state: Swift.String
+  public var zipCode: Swift.String
+  public init(address1: Swift.String, address2: Swift.String, country: Swift.String, city: Swift.String, state: Swift.String, zipCode: Swift.String)
+}
+public struct CardDetail {
+  public var cardNumber: Swift.String
+  public var cardExpMonth: Swift.String
+  public var cardExpYear: Swift.String
+  public var securityCode: Swift.String
+  public var cardHolderName: Swift.String
+  public init(cardNumber: Swift.String, cardExpMonth: Swift.String, cardExpYear: Swift.String, securityCode: Swift.String, cardHolderName: Swift.String, cardType: aipayiOSLibrary_multiproduct.PaymentType, cardScheme: aipayiOSLibrary_multiproduct.CardType)
+}
+public enum PaymentType : Swift.String {
+  case creditCard
+  case debitCard
+  case netBanking
+  case upi
+  case upiApps
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CardType : Swift.String {
+  case visa
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum AtomtechMode {
+  case production
+  case sandbox
+  public static func == (a: aipayiOSLibrary_multiproduct.AtomtechMode, b: aipayiOSLibrary_multiproduct.AtomtechMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers open class Cryptor : aipayiOSLibrary_multiproduct.StreamCryptor, aipayiOSLibrary_multiproduct.Updateable {
+  open func final() -> [Swift.UInt8]?
+  open func update(buffer: Swift.UnsafeRawPointer, byteCount: Swift.Int) -> Self?
+  override public init(operation: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, algorithm: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, options: aipayiOSLibrary_multiproduct.StreamCryptor.Options, keyBuffer: Swift.UnsafeRawPointer, keyByteCount: Swift.Int, ivBuffer: Swift.UnsafeRawPointer, ivByteCount: Swift.Int)
+  override public init(operation: aipayiOSLibrary_multiproduct.StreamCryptor.Operation, algorithm: aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm, mode: aipayiOSLibrary_multiproduct.StreamCryptor.Mode, padding: aipayiOSLibrary_multiproduct.StreamCryptor.Padding, keyBuffer: Swift.UnsafeRawPointer, keyByteCount: Swift.Int, ivBuffer: Swift.UnsafeRawPointer, ivByteCount: Swift.Int)
+  @objc deinit
+}
+extension aipayiOSLibrary_multiproduct.Digest.Algorithm : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.Digest.Algorithm : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.Status : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.Status : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.Status : Swift.RawRepresentable {}
+extension aipayiOSLibrary_multiproduct.StreamCryptor.Operation : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.StreamCryptor.Operation : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.StreamCryptor.Mode : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.StreamCryptor.Mode : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.StreamCryptor.Padding : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.StreamCryptor.Padding : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.StreamCryptor.Algorithm : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.PBKDF.PseudoRandomAlgorithm : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.PBKDF.PseudoRandomAlgorithm : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.PaymentType : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.PaymentType : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.PaymentType : Swift.RawRepresentable {}
+extension aipayiOSLibrary_multiproduct.CardType : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.CardType : Swift.Hashable {}
+extension aipayiOSLibrary_multiproduct.CardType : Swift.RawRepresentable {}
+extension aipayiOSLibrary_multiproduct.AtomtechMode : Swift.Equatable {}
+extension aipayiOSLibrary_multiproduct.AtomtechMode : Swift.Hashable {}
