@@ -29,13 +29,25 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     // response handling post transaction completion
     @objc func handleNdpsAipayResponse(_ notification: Notification) {
+       
         if let responseData = notification.userInfo?["data"] as? String {
             print(responseData)
+            
+            let alert = UIAlertController(title: "Payment Response",
+                                                 message: responseData,
+                                                 preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                   
+                   // Present alert on main thread
+                   DispatchQueue.main.async {
+                       self.present(alert, animated: true, completion: nil)
+                   }
         }
     }
     
     @objc func payButtonAction(_ sender:UIButton!) {
         let merchTxnId = String.random()
+        
         let aipayAuthRequest:[String: Any] =
                                ["merchId" : "317157",
                                 "password": "Test@123",
@@ -48,7 +60,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
                                 ],
                                 "custAccNo":"6567657",
                                 "txnCurrency":"INR",
-                                "custEmail":"testemailyghb@xyz.com",
+                                "custEmail":"testuserone@xyz.com",
                                 "custMobile":"8888888888",
                                 "udf1":"udf1",
                                 "udf2":"udf2",
@@ -64,7 +76,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
                                 "decryptionKey" :"75AEF0FA1B94B3C10D4F5B268F757F11",
                                 "responseHashKey" :"KEYRESP123657234",
                                 "payMode": "uat"]
-                
+
                 
         let manager = PaymentsManager()
         manager.ndpsAipayPayments(paymentRequestData: aipayAuthRequest, controller: self)

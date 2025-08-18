@@ -9462,7 +9462,7 @@
       "kind": "StringLiteral",
       "offset": 452,
       "length": 13,
-      "value": "\"AIPAY_2.0.2\""
+      "value": "\"AIPAY_2.0.1\""
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/aes_files\/Status.swift",
@@ -9635,7 +9635,7 @@
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/PaymentViewController.swift",
       "kind": "StringLiteral",
-      "offset": 8067,
+      "offset": 8784,
       "length": 31,
       "value": "\"ndpsAipayResponseNotification\""
     },
@@ -9669,120 +9669,148 @@
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 3746,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 4196,
+      "length": 9,
+      "value": "\"OTS0201\""
+    },
+    {
+      "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 4216,
+      "length": 9,
+      "value": "\"TIMEOUT\""
+    },
+    {
+      "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 4240,
+      "length": 24,
+      "value": "\"TRANSACTION IS TIMEOUT\""
+    },
+    {
+      "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 10607,
+      "offset": 11807,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 10673,
+      "offset": 11873,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 10744,
+      "offset": 11944,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 10891,
+      "offset": 12091,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 10960,
+      "offset": 12160,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 11030,
+      "offset": 12230,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "Array",
-      "offset": 11336,
+      "offset": 12536,
       "length": 7,
       "value": "[\"upi\"]"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 11410,
+      "offset": 12610,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 11496,
+      "offset": 12696,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 11584,
+      "offset": 12784,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 12162,
+      "offset": 13362,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 12257,
+      "offset": 13457,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 12347,
+      "offset": 13547,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 12474,
+      "offset": 13674,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 12537,
+      "offset": 13737,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 12687,
+      "offset": 13887,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/atomtechnologies\/Documents\/SDKdevelopment\/aipay_sdk\/aipay_ios_sdk_development\/aipayiOSLibrary\/aipayiOSLibrary\/NdpsUtils.swift",
       "kind": "StringLiteral",
-      "offset": 13271,
+      "offset": 14471,
       "length": 56,
       "value": "\"Error has been occured in UPi Intent response handling\""
     },
