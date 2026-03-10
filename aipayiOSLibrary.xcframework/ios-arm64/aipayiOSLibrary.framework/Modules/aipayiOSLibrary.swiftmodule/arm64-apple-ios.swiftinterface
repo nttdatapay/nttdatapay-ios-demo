@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
-// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name aipayiOSLibrary
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name aipayiOSLibrary
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import CommonCrypto
 import Foundation
 import Swift
@@ -12,16 +13,30 @@ import _SwiftConcurrencyShims
 @_exported import aipayiOSLibrary
 public protocol Updateable {
   var status: aipayiOSLibrary.Status { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   @discardableResult
-  func update(buffer: Swift.UnsafeRawPointer, byteCount: Darwin.size_t) -> Self?
+  func update(buffer: Swift.UnsafeRawPointer, byteCount: _Builtin_stddef.size_t) -> Self?
+  #endif
 }
 extension aipayiOSLibrary.Updateable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func update(data: Foundation.Data) -> Self?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func update(byteArray: [Swift.UInt8]) -> Self?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func update(string: Swift.String) -> Self?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func update(_ data: Foundation.Data) -> Self?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func update(_ byteArray: [Swift.UInt8]) -> Self?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func update(_ string: Swift.String) -> Self?
+  #endif
 }
 open class Digest : aipayiOSLibrary.Updateable {
   open var status: aipayiOSLibrary.Status
@@ -34,7 +49,9 @@ open class Digest : aipayiOSLibrary.Updateable {
     }
   }
   public init(algorithm: aipayiOSLibrary.Digest.Algorithm)
-  open func update(buffer: Swift.UnsafeRawPointer, byteCount: Darwin.size_t) -> Self?
+  #if compiler(>=5.3) && $NonescapableTypes
+  open func update(buffer: Swift.UnsafeRawPointer, byteCount: _Builtin_stddef.size_t) -> Self?
+  #endif
   open func final() -> [Swift.UInt8]
   @objc deinit
 }
@@ -43,8 +60,12 @@ public enum Status : CommonCrypto.CCCryptorStatus, Swift.CustomStringConvertible
   public var description: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func fromRaw(status: CommonCrypto.CCCryptorStatus) -> aipayiOSLibrary.Status?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: CommonCrypto.CCCryptorStatus)
+  #endif
   public typealias RawValue = CommonCrypto.CCCryptorStatus
   public var rawValue: CommonCrypto.CCCryptorStatus {
     get
@@ -128,10 +149,14 @@ open class StreamCryptor {
 public func zeroPad(array: [Swift.UInt8], blockSize: Swift.Int) -> [Swift.UInt8]
 public func hexString(fromArray: [Swift.UInt8], uppercase: Swift.Bool = false) -> Swift.String
 public func zeroPad(string: Swift.String, blockSize: Swift.Int) -> [Swift.UInt8]
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class PaymentsManager : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public func ndpsAipayPayments(paymentRequestData: [Swift.String : Any], controller: UIKit.UIViewController)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class PaymentsManager : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public func ndpsAipayPayments(paymentRequestData: [Swift.String : Any], controller: UIKit.UIViewController)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers open class PBKDF {
@@ -148,9 +173,9 @@ public func zeroPad(string: Swift.String, blockSize: Swift.Int) -> [Swift.UInt8]
     }
   }
   open class func calibrate(passwordLength: Swift.Int, saltLength: Swift.Int, algorithm: aipayiOSLibrary.PBKDF.PseudoRandomAlgorithm, derivedKeyLength: Swift.Int, msec: Swift.UInt32) -> Swift.UInt
-  open class func deriveKey(password: Swift.String, salt: Swift.String, prf: aipayiOSLibrary.PBKDF.PseudoRandomAlgorithm, rounds: Darwin.uint, derivedKeyLength: Swift.UInt) -> [Swift.UInt8]
-  open class func deriveKey(password: Swift.String, salt: [Swift.UInt8], prf: aipayiOSLibrary.PBKDF.PseudoRandomAlgorithm, rounds: Darwin.uint, derivedKeyLength: Swift.UInt) -> [Swift.UInt8]
-  open class func deriveKey(password: Swift.UnsafePointer<Swift.Int8>, passwordLen: Swift.Int, salt: Swift.UnsafePointer<Swift.UInt8>, saltLen: Swift.Int, prf: aipayiOSLibrary.PBKDF.PseudoRandomAlgorithm, rounds: Darwin.uint, derivedKey: Swift.UnsafeMutablePointer<Swift.UInt8>, derivedKeyLen: Swift.Int)
+  open class func deriveKey(password: Swift.String, salt: Swift.String, prf: aipayiOSLibrary.PBKDF.PseudoRandomAlgorithm, rounds: _DarwinFoundation2.uint, derivedKeyLength: Swift.UInt) -> [Swift.UInt8]
+  open class func deriveKey(password: Swift.String, salt: [Swift.UInt8], prf: aipayiOSLibrary.PBKDF.PseudoRandomAlgorithm, rounds: _DarwinFoundation2.uint, derivedKeyLength: Swift.UInt) -> [Swift.UInt8]
+  open class func deriveKey(password: Swift.UnsafePointer<Swift.Int8>, passwordLen: Swift.Int, salt: Swift.UnsafePointer<Swift.UInt8>, saltLen: Swift.Int, prf: aipayiOSLibrary.PBKDF.PseudoRandomAlgorithm, rounds: _DarwinFoundation2.uint, derivedKey: Swift.UnsafeMutablePointer<Swift.UInt8>, derivedKeyLen: Swift.Int)
   @objc deinit
 }
 public typealias RNGStatus = aipayiOSLibrary.Status
@@ -215,7 +240,9 @@ public enum PaymentType : Swift.String {
   case upi
   case upiApps
   case other
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -223,7 +250,9 @@ public enum PaymentType : Swift.String {
 }
 public enum CardType : Swift.String {
   case visa
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -239,8 +268,12 @@ public enum AtomtechMode {
   }
 }
 @_inheritsConvenienceInitializers open class Cryptor : aipayiOSLibrary.StreamCryptor, aipayiOSLibrary.Updateable {
+  #if compiler(>=5.3) && $NonescapableTypes
   open func final() -> [Swift.UInt8]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   open func update(buffer: Swift.UnsafeRawPointer, byteCount: Swift.Int) -> Self?
+  #endif
   override public init(operation: aipayiOSLibrary.StreamCryptor.Operation, algorithm: aipayiOSLibrary.StreamCryptor.Algorithm, options: aipayiOSLibrary.StreamCryptor.Options, keyBuffer: Swift.UnsafeRawPointer, keyByteCount: Swift.Int, ivBuffer: Swift.UnsafeRawPointer, ivByteCount: Swift.Int)
   override public init(operation: aipayiOSLibrary.StreamCryptor.Operation, algorithm: aipayiOSLibrary.StreamCryptor.Algorithm, mode: aipayiOSLibrary.StreamCryptor.Mode, padding: aipayiOSLibrary.StreamCryptor.Padding, keyBuffer: Swift.UnsafeRawPointer, keyByteCount: Swift.Int, ivBuffer: Swift.UnsafeRawPointer, ivByteCount: Swift.Int)
   @objc deinit
