@@ -1,0 +1,4 @@
+*.m linguist-detectable=false
+*.h linguist-detectable=false
+
+nttdatapay-ios-demo/** linguist-detectable=false
