@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/aipayiOSLibrary-Swift.h</key>
 		<data>
-		hYpKv1C+qxONyP1jYvTzqmA8wGs=
+		XOdVj6sRvgDLrBW+kScm+p6EP7Q=
 		</data>
 		<key>Headers/aipayiOSLibrary.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		a6b4hjQMfYAv7jg5FwVfhZ3zIao=
+		EmqmqmJN9l0WqpohJOtKPCBLf/8=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		TwLBETR0JQZFdy+o3vZfMKMcuzA=
+		ChuINthS4Xqao5Kl39h8SqPTWak=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		1jIHrsp5Cs85z90tD+Rxc7qfxks=
+		/A2Nl/lcg5U+50MF6EAcPpwJzH8=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Y8Qxgeab+XwBSm+JZljIxIHYaQs=
+		Uib3O8o8rENNZFDSxzQYr29HB9s=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		1jIHrsp5Cs85z90tD+Rxc7qfxks=
+		/A2Nl/lcg5U+50MF6EAcPpwJzH8=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZEudi2VSYb3GquVfxsxgitwdjsc=
+		uiDwAhviuul/EhhePtgtNpr7coU=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		TwLBETR0JQZFdy+o3vZfMKMcuzA=
+		ChuINthS4Xqao5Kl39h8SqPTWak=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		RkAPPzqRZtFTWmH/odVF6p6tBBg=
+		7oMpgMXmk2ZzHaDzKKA18iY4HTw=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		U0VeL5fv5CEv9CY3sz6JnQ344T0=
+		6twIaNHb2wsudHuyAsIkLk3WVgM=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		RkAPPzqRZtFTWmH/odVF6p6tBBg=
+		7oMpgMXmk2ZzHaDzKKA18iY4HTw=
 		</data>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		kaqsex0a+mQtzWi1xPCbFVgTkUc=
+		fAnhXKsgx7TDvRo+bJotw3qEWhI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -111,7 +111,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jycHcVgzNYW5DP5fEqSDEojawo+3kGObJ0+GlhhGk1M=
+			vcHS1RVzijfAqP/hTDGq8BGXcd4NEuMTz3wxKITizVQ=
 			</data>
 		</dict>
 		<key>Headers/aipayiOSLibrary.h</key>
@@ -125,70 +125,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			npdiZDwzkLP+MLGNBbGKLPE7L7A12ydvV2REGJiCOxA=
+			rop6nyB7m9rBVNtzwxUCsdWzOLOjrgRCALbDN7hrv8o=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RB3XX3nTNiBmUSjI2ZIDo2640D9cCPQveaTWGyWF0Wo=
+			NPwyFparF7owx2Uo83GofD6wBinlMtDuPZQyxkJNPD0=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			b/3nIz7Qmca4/g4G7jKjJaGHhe71zqMPQeTaRGLPQG4=
+			30AfyfLa25VEoab+NwwmYmMDRZHOduMrO1HYd54voT0=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RB3XX3nTNiBmUSjI2ZIDo2640D9cCPQveaTWGyWF0Wo=
+			NPwyFparF7owx2Uo83GofD6wBinlMtDuPZQyxkJNPD0=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jJQWSdwLk1VotpaBVx/K8Qjs7DvcypE9jGHvqZb4sOQ=
+			6j8lklI4b9TOb0bx7mC7RrSqt7/NTwwTgeEKAURWWE0=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			npdiZDwzkLP+MLGNBbGKLPE7L7A12ydvV2REGJiCOxA=
+			rop6nyB7m9rBVNtzwxUCsdWzOLOjrgRCALbDN7hrv8o=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZZsiLCDHpcmfgqvsnwkSkoha1Cmo8vLZVWegAAMWM1Q=
+			cu+GSohAgvy44aLkQ32fX1OmAdvCyDYPRUMP39i91X4=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WZwVf6VovrjpajAiaRuebyg5koyNSMlg2NschZQJh9U=
+			l+ZN2djQ5eQJIAmsTcbzsxBJVpxfccwWD1Kwh30cwnY=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZZsiLCDHpcmfgqvsnwkSkoha1Cmo8vLZVWegAAMWM1Q=
+			cu+GSohAgvy44aLkQ32fX1OmAdvCyDYPRUMP39i91X4=
 			</data>
 		</dict>
 		<key>Modules/aipayiOSLibrary.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R4BBpFO+I3aConz10IeaLEOKIv0O16Qgid/bAT961kE=
+			rf+jdqQ/+GmYLmgGIGStSrHH8S7u3Ds9wxGcFF5h6I4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
